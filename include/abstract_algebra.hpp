@@ -5,13 +5,15 @@
 #include <cmath>
 #include <complex>
 
+#include "set.hpp"
+
 namespace abstract_algebra {
 
-struct natural_number {} N;
-struct integer_number {} Z;
-struct rational_number {} Q;
-struct real_number {} R;
-struct complex_number {} C;
+struct natural_number {} N; constexpr bool is_set(natural_number) { return true; }
+struct integer_number {} Z; constexpr bool is_set(integer_number) { return true; }
+struct rational_number {} Q; constexpr bool is_set(rational_number) { return true; }
+struct real_number {} R; constexpr bool is_set(real_number) { return true; }
+struct complex_number {} C; constexpr bool is_set(complex_number) { return true; }
 
 constexpr bool is_subset(natural_number N, integer_number Z) {
     return true;
